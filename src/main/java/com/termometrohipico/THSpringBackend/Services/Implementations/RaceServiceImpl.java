@@ -5,6 +5,7 @@ import com.termometrohipico.THSpringBackend.Repository.RaceRepository;
 import com.termometrohipico.THSpringBackend.Services.RaceService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class RaceServiceImpl implements RaceService {
 
@@ -13,15 +14,15 @@ public class RaceServiceImpl implements RaceService {
     public RaceServiceImpl (RaceRepository theRaceRepo){
         this.raceRepo = theRaceRepo;
     }
-    
+
     @Override
     public List<Race> findAll() {
-        return null;
+        return raceRepo.findAll();
     }
 
     @Override
-    public Race findById() {
-        return null;
+    public Optional findById(Long id) {
+        return raceRepo.findById(id);
     }
 
     @Override
