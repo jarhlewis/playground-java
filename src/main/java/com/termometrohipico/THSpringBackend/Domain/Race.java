@@ -1,9 +1,6 @@
 package com.termometrohipico.THSpringBackend.Domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
@@ -30,7 +27,7 @@ public class Race {
         this.raceId = raceId;
         this.racename = racename;
         this.horsename = horsename;
-        Score = score;
+        this.Score = score;
     }
 
     public Long getRecordId() {

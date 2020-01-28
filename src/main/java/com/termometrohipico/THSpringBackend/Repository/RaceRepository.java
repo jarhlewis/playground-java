@@ -1,6 +1,10 @@
 package com.termometrohipico.THSpringBackend.Repository;
 
+import com.termometrohipico.THSpringBackend.Domain.Race;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface RaceRepository extends JpaRepository {
+
+@Repository
+public interface RaceRepository extends JpaRepository<Race, Long> {
 }
