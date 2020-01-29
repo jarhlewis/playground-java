@@ -4,6 +4,8 @@ import com.termometrohipico.Microservices.Domain.Race;
 import com.termometrohipico.Microservices.Service.RaceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,10 +28,29 @@ public class RaceController {
     }
 
     @PostMapping("")
-    public void save(@RequestBody Map<String, Race> races){
+    public ResponseEntity<Race> save(@RequestBody Map<String, Race> races){
         logger.info("Post request to save");
         for(Map.Entry<String, Race> entry : races.entrySet()){
             raceService.save(entry.getValue());
+        }
+        HttpHeaders headers = new HttpHeaders();
+
+        return ResponseEntity.ok().headers(headers).body(null);
+    }
+
+    @PostMapping("/update")
+    public ResponseEntity<Race> update(@RequestBody Race race){
+        logger.info("Post request to update existing record....");
+
+        HttpHeaders headers = new HttpHeaders();
+
+        if(race.getId() != null){
+            logger.info("Record has Id. Saving...");
+            raceService.save(race);
+            return ResponseEntity.ok().headers(headers).body(null);
+        }else {
+            logger.info("Error: Record does not exist");
+            return ResponseEntity.badRequest().headers(headers).body(null);
         }
     }
 }

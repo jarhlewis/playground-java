@@ -30,4 +30,5 @@ public class RaceServiceImpl implements RaceService {
         logger.info("Request to save: " + race.toString());
         raceRepository.save(race);
     }
+
 }
