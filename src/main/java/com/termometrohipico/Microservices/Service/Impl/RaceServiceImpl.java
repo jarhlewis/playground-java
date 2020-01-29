@@ -24,4 +24,10 @@ public class RaceServiceImpl implements RaceService {
         logger.info("Request to find all");
         return raceRepository.findAll();
     }
+
+    @Override
+    public void save(Race race) {
+        logger.info("Request to save: " + race.toString());
+        raceRepository.save(race);
+    }
 }

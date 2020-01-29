@@ -17,17 +17,29 @@ public class Race implements Serializable {
     private String horseName;
     private String location;
     private Integer accuracy;
+    private Integer score;
+
+
 
     public Race() {
     }
 
-    public Race(Long id, Date date, Integer raceNum, String horseName, String location, Integer accuracy) {
+    public Race(Long id, Date date, Integer raceNum, String horseName, String location, Integer accuracy, Integer score) {
         Id = id;
         this.date = date;
         this.raceNum = raceNum;
         this.horseName = horseName;
         this.location = location;
         this.accuracy = accuracy;
+        this.score = score;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
     public Long getId() {
@@ -87,6 +99,7 @@ public class Race implements Serializable {
                 ", horseName='" + horseName + '\'' +
                 ", location='" + location + '\'' +
                 ", accuracy=" + accuracy +
+                ", accuracy=" + score +
                 '}';
     }
 }

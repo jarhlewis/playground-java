@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RaceService {
     public List<Race> findAll();
+    public void save(Race race);
 }
