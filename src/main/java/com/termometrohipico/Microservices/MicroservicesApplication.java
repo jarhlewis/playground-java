@@ -1,13 +1,13 @@
-package com.termometrohipico.THSpringBackend;
+package com.termometrohipico.Microservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ThSpringBackendApplication {
+public class MicroservicesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ThSpringBackendApplication.class, args);
+		SpringApplication.run(MicroservicesApplication.class, args);
 	}
 
 }

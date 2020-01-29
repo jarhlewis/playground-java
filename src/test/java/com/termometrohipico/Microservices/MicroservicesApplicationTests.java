@@ -1,10 +1,10 @@
-package com.termometrohipico.THSpringBackend;
+package com.termometrohipico.Microservices;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ThSpringBackendApplicationTests {
+class MicroservicesApplicationTests {
 
 	@Test
 	void contextLoads() {
