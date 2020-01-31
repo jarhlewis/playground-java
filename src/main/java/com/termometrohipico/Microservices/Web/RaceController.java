@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/race")
+@RequestMapping(value = "/api/race")
+@CrossOrigin(origins = "http://localhost/3000")
 public class RaceController {
     private final Logger logger = LoggerFactory.getLogger(RaceController.class);
     private final RaceService raceService;
