@@ -18,13 +18,14 @@ public class Race implements Serializable {
     private String location;
     private Integer accuracy;
     private Integer score;
+    private String customerPlan;
 
 
 
     public Race() {
     }
 
-    public Race(Long id, Date date, Integer raceNum, String horseName, String location, Integer accuracy, Integer score) {
+    public Race(Long id, Date date, Integer raceNum, String horseName, String location, Integer accuracy, Integer score, String customerPlan) {
         Id = id;
         this.date = date;
         this.raceNum = raceNum;
@@ -32,6 +33,15 @@ public class Race implements Serializable {
         this.location = location;
         this.accuracy = accuracy;
         this.score = score;
+        this.customerPlan = customerPlan;
+    }
+
+    public String getCustomerPlan() {
+        return customerPlan;
+    }
+
+    public void setCustomerPlan(String customerPlan) {
+        this.customerPlan = customerPlan;
     }
 
     public Integer getScore() {
@@ -99,7 +109,8 @@ public class Race implements Serializable {
                 ", horseName='" + horseName + '\'' +
                 ", location='" + location + '\'' +
                 ", accuracy=" + accuracy +
-                ", accuracy=" + score +
+                ", score=" + score +
+                ", customerPlan='" + customerPlan + '\'' +
                 '}';
     }
 }
